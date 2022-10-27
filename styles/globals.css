@@ -1,26 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url("https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Nanum+Myeongjo:wght@400;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300&display=swap");
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer components {
+  .font-nanum {
+    font-family: "Nanum Myeongjo", serif;
   }
-  body {
-    color: white;
-    background: black;
+  .font-source-sans {
+    font-family: "Source Sans Pro", sans-serif;
   }
+  .font-play {
+    font-family: "Bilbo Swash Caps", cursive;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-[#060c08] dark:text-slate-200 !important;
+}
+
+.swiper-button-next {
+  @apply translate-y-20 !important;
+}
+.swiper-button-prev {
+  @apply translate-y-20 !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-[#060c08] dark:bg-slate-200 !important;
+}
+.swiper-pagination-bullet {
+  @apply bg-[#060c08] dark:bg-slate-200 !important;
 }
