@@ -118,19 +118,22 @@ const Nav = ({}: Props) => {
       {renderThemeChanger()}
 
       <div className="md:hidden bg-transparent max-h-[4.4rem] py-6 rounded-t-xl fixed bottom-10  left-2/4 -translate-x-[50%] z-50 text-white">
-        <ul className="flex relative z-50">
+        <ul className="flex relative z-50 " unselectable="on">
           <span
-            className={`bg-[#F08000]/70 duration-700 ${MenusPhone[active].dis} h-16 w-16 absolute z-0 top-0 rounded-full`}
+            className={`bg-[#F08000]/70 duration-700 ${MenusPhone[active].dis} h-16 w-16 absolute z-0 top-0 rounded-full selection:bg-transparent`}
           ></span>
           {MenusPhone.map((menu, i) => (
             <Link href={`/#${menu.goTo}`} key={i}>
               <li
-                className={`h-16 w-16 bg-black text-white flex items-center justify-center cursor-pointer  ${
+                unselectable="on"
+                className={`h-16 w-16 bg-black text-white flex items-center justify-center  cursor-pointer selection:bg-transparent  ${
                   menu.rounded == "first" && "rounded-l-full"
                 } ${menu.rounded == "last" && "rounded-r-full"}`}
                 onClick={() => setActive(i)}
               >
-                <span className="z-30 font-nanum">{menu.name}</span>
+                <span unselectable="on" className="z-30 font-nanum">
+                  {menu.name}
+                </span>
               </li>
             </Link>
           ))}
