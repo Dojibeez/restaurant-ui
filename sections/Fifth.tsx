@@ -14,9 +14,8 @@ const Fifth = (props: Props) => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10498.957847485799!2d2.3292406951412477!3d48.86317838477695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e267a32d441%3A0xb0088e1f7c07f451!2sPyramide%20du%20Louvre!5e0!3m2!1sfr!2sfr!4v1666879589851!5m2!1sfr!2sfr"
           width="600"
           height="450"
-          allowfullscreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
           className="shadow-2xl dark:shadow-transparent dark:invert"
         ></motion.iframe>
         <div className="dark:text-slate-200 text-[#060c08] transition-all duration-100 flex-1 p-10 flex flex-col gap-y-14">
