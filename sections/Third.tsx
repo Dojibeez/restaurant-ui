@@ -50,7 +50,7 @@ const data: any[] = [
 
 const Third = (props: Props) => {
   return (
-    <div className="h-screen w-screen max-w-[100%] relative text-[#060c08] dark:text-slate-200 flex items-center">
+    <div className="h-screen w-screen max-w-[100%] relative text-[#060c08] dark:text-slate-200 flex items-center  justify-center">
       <motion.div
         initial={{ opacity: 0 }}
         transition={{ duration: 1.2 }}
