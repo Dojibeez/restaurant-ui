@@ -47,6 +47,39 @@ const Nav = ({}: Props) => {
     },
   ];
 
+  const MenusPhone: any[] = [
+    {
+      name: "I",
+      dis: "translate-x-0",
+      rounded: "first",
+      goTo: "1",
+    },
+    {
+      name: "II",
+      dis: "translate-x-16",
+      rounded: "false",
+      goTo: "2",
+    },
+    {
+      name: "III",
+      dis: "translate-x-32",
+      rounded: "false",
+      goTo: "3",
+    },
+    {
+      name: "IV",
+      dis: "translate-x-48",
+      rounded: "false",
+      goTo: "4",
+    },
+    {
+      name: "V",
+      dis: "translate-x-64",
+      rounded: "last",
+      goTo: "5",
+    },
+  ];
+
   const renderThemeChanger = () => {
     if (!mounted) return null;
     const currentTheme = theme === "system" ? systemTheme : theme;
@@ -62,7 +95,7 @@ const Nav = ({}: Props) => {
 
   return (
     <>
-      <div className="bg-transparent max-w-[10rem] px-6 rounded-t-xl fixed top-2/4 -translate-y-[50%] right-10 z-20 text-white">
+      <div className="hidden md:flex bg-transparent max-w-[10rem] px-6 rounded-t-xl fixed top-2/4 -translate-y-[50%] right-10 z-20 text-white">
         <ul className="flex flex-col relative">
           <span
             className={`bg-[#F08000]/70 duration-700 ${Menus[active].dis} h-16 w-16 absolute z-0 top-0 rounded-full`}
@@ -81,7 +114,28 @@ const Nav = ({}: Props) => {
           ))}
         </ul>
       </div>
+
       {renderThemeChanger()}
+
+      <div className="md:hidden bg-transparent max-h-[4.4rem] py-6 rounded-t-xl fixed bottom-10  left-2/4 -translate-x-[50%] z-50 text-white">
+        <ul className="flex relative z-50">
+          <span
+            className={`bg-[#F08000]/70 duration-700 ${MenusPhone[active].dis} h-16 w-16 absolute z-0 top-0 rounded-full`}
+          ></span>
+          {MenusPhone.map((menu, i) => (
+            <Link href={`/#${menu.goTo}`} key={i}>
+              <li
+                className={`h-16 w-16 bg-black text-white flex items-center justify-center cursor-pointer  ${
+                  menu.rounded == "first" && "rounded-l-full"
+                } ${menu.rounded == "last" && "rounded-r-full"}`}
+                onClick={() => setActive(i)}
+              >
+                <span className="z-30 font-nanum">{menu.name}</span>
+              </li>
+            </Link>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };

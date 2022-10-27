@@ -64,12 +64,12 @@ const Third = (props: Props) => {
           pagination={true}
           navigation={true}
           modules={[EffectFlip, Pagination, Navigation]}
-          className="mySwiper w-[400px] h-[600px] p-[50px]"
+          className="mySwiper w-[250px] h-[350px] md:w-[400px] md:h-[600px] p-[50px]"
         >
           {data.map((menu, i) => (
             <SwiperSlide
               className={
-                "bg-cover bg-center w-[400px] h-[600px] bg-transprent flex flex-col justify-between pb-10 border border-[#060c08]/10 dark:border-slate-200/10 relative"
+                "bg-cover bg-center w-[250px] h-[350px] md:w-[400px] md:h-[600px] bg-transprent flex flex-col justify-between items-center pb-10 border border-[#060c08]/10 dark:border-slate-200/10 relative"
               }
               key={i}
             >
@@ -77,12 +77,12 @@ const Third = (props: Props) => {
               <div className="w-6 h-6 absolute top-0 right-0 border-t border-r  border-[#060c08]/40 dark:border-slate-200/40" />
               <div className="w-6 h-6 absolute bottom-0 left-0 border-b border-l  border-[#060c08]/40 dark:border-slate-200/40" />
               <div className="w-6 h-6 absolute bottom-0 right-0 border-b border-r  border-[#060c08]/40 dark:border-slate-200/40" />
-              <img className="w-[400px]" src={`${menu.image}`} />
+              <img className="w-[200px] md:w-[400px]" src={`${menu.image}`} />
               <div>
-                <h1 className="font-nanum italic text-4xl text-center mb-4">
+                <h1 className="font-nanum italic text-2xl md:text-4xl text-center mb-4">
                   {menu.name}
                 </h1>
-                <p className="font-thin text-md text-center">
+                <p className="font-thin text-sm md:text-md text-center">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Maiores repellendus quia fuga dolor.
                 </p>

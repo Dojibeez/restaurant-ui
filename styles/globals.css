@@ -22,10 +22,10 @@
 }
 
 .swiper-button-next {
-  @apply translate-y-20 !important;
+  @apply -translate-y-2 md:translate-y-20 !important;
 }
 .swiper-button-prev {
-  @apply translate-y-20 !important;
+  @apply -translate-y-2 md:translate-y-20 !important;
 }
 
 .swiper-pagination-bullet-active {
